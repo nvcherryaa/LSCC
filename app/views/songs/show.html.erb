@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1><%= @song.title %><small></small></h1>
+</div>
+
+<div class="row">
+
+  <% if @song.youtube_link %>
+
+      <div class="col-md-5">
+        <iframe width="100%" height="320" src="<%= @song.youtube_link.sub('watch?v=', 'v/') %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+  <% end %>
+
+  <div class="col-md-6">
+
+    <%= @song.lyrics.html_safe %>
+
+  </div>
+
+
+
+
+</div>

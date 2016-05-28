@@ -1,0 +1,6 @@
+<%= simple_form_for @artist do |f| %>
+    <%= f.input :name, :class => "col-md-3" %>
+    <%= f.file_field :avatar, :class => 'file', :html => {'file-input' => true}, :data => {'allowed-file-extensions' => '["jpg", "jpeg", "png", "gif"]'} %>
+    <br>
+    <%= f.submit 'Submit', :class => 'btn btn-primary btn-sm' %>
+<% end %>

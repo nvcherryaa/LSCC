@@ -1,0 +1,7 @@
+<%= simple_form_for @song do |f| %>
+    <%= f.input :title, :class => "col-md-3" %>
+    <%= f.input :youtube_link %>
+    <%= f.input :lyrics, as: :summernote, :html => {'summernote' => true} %>
+    <br>
+    <%= f.submit 'Submit', :class => 'btn btn-primary btn-sm' %>
+<% end %>

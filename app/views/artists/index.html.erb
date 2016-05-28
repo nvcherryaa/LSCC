@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>Artists<small></small></h1>
+</div>
+
+<%= link_to "Add Artist", new_artist_path, class: 'btn btn-primary btn-sm' %>
+
+<br>
+
+<% if @artists.length > 0 %>
+<table class="table table-hover table-striped">
+	<thead>
+		<tr>
+			<th>Artist Name</th>
+      <th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+      <% @artists.each do |a| %>
+
+      <tr>
+          <td>
+            <%= a.name %>
+          </td>
+
+          <td>
+
+            <%= link_to "View", artist_path(a), :class => 'btn btn-xs btn-primary' %>
+            <%= link_to "Edit", edit_artist_path(a), :class => 'btn btn-xs btn-warning' %>
+            <%= link_to "Delete", artist_path(a), method: :delete, :class => 'btn btn-xs btn-danger' %>
+
+          </td>
+
+      </tr>
+      <% end %>
+
+	</tbody>
+</table>
+<% end %>
